@@ -2,6 +2,8 @@
 
 <h4 align="center">Inventory application using Node JS, Express and PostgreSQL</h4>
 
+<h5 align="center">https://inventorysql.onrender.com/</h5>
+
 <p>
   At the conclusion of the Express module—part of The Odin Project's NodeJS course—we were tasked with developing an application that would integrate the various technologies learned thus far: NodeJS and its Express framework, the use of a database such as PostgreSQL, and the deployment of both the database and the application to an external server.
 Consequently, I chose to develop a tool-sharing application—something that could be utilized within a small community or residential complex.
