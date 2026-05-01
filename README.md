@@ -15,6 +15,8 @@ Consequently, I chose to develop a tool-sharing application—something that cou
 The application is quite simple, featuring a "Tools" tab displaying key information (clicking "Details" allows the user to access more specific particulars); a "Users" tab that permits the addition of new users (though a password is required to delete them); a tab for borrowing a tool (provided it is not currently in use); and, finally, a tab displaying a log of all transactions (loans and returns).
 </p>
 
+![image alt](https://github.com/minduwin/borrow_sql/blob/9f21818598c706c0a0501f7e3cba9db776996742/invent.jpg)
+
 <p>
 Following this, I deployed the database and the application to an external server (Render), and the application is now live (at least for 30 days, as I utilized the free tier).
 </p>
