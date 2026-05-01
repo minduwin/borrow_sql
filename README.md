@@ -1,2 +1,2 @@
-2# Inventory SQL
+Inventory SQL
 
