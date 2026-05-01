@@ -1,2 +1,2 @@
-#H1 Inventory SQL
+# Inventory SQL
 
