@@ -1,3 +1,3 @@
-#Inventory Application
+# Inventory Application
 
-####Inventory application using Node JS, Express and PostgreSQL
+#### Inventory application using Node JS, Express and PostgreSQL
