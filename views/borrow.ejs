@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title><%= title %></title>
+</head>
+<body>
+    <%- include('navbar') %>
+    <div class="borrowHead">
+        <h1>Borrow Tools</h1>
+    </div>
+    <div class="borrowBoard">
+        <form method="POST" action="/borrow" class="borrowForm">
+            <div class="userOption">
+                <label for="client">User: </label>
+                <select name="userId" id="client">
+                    <option value="">-- Select a Name --</option>
+                    <% allUsers.forEach(function(person) { %>
+                        <option value="<%= person.tooluser_id %>"><%= person.tooluser_name %></option>
+                    <% }); %>
+                </select>
+            </div>
+            <div class="toolOption">
+                <label for="tools">Tools: </label>
+                <select name="toolId" id="tool-select">
+                    <option value="">-- Select an Item --</option>
+                    <% allTools.forEach(function(item) { %>
+                        <% if (item.situation === 'Available') { %>
+                            <option value="<%= item.invent_id %>"><%= item.tool %></option>
+                        <% } %>
+                    <% }); %>
+                </select>
+            </div>
+            <div class="borrowBtn">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="footPage">
+        <%- include('footer') %>
+    </div>
+</body>
+</html>

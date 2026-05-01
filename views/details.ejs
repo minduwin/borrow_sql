@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('navbar') %>
+    <div class="mainDetails">
+        <div class="toolImg">
+            <img src="/<%= tool.image_path %>" alt="">
+        </div>
+        <div class="toolInfo">
+            <div class="toolHead">
+                <h1><%= tool.tool %></h1>
+            </div>
+            <div class="toolCond">
+                <p class="condHead">Condition: </p>
+                <% if (tool.condition === 'Good') { %>
+                    <p class="condition good"><%= tool.condition %></p>
+                <% } else if (tool.condition === 'Fair') { %>
+                    <p class="condition fair"><%= tool.condition %></p>
+                <% } else { %>
+                    <p class="condition poor"><%= tool.condition %></p>
+                <% } %>
+            </div>
+            <div class="toolSit">
+                <p class="sitHead">Situation: </p>
+                <% if (tool.situation === 'Available') { %>
+                    <p class="situation avai"><%= tool.situation %></p>
+                <% } else { %>
+                    <p class="situation use"><%= tool.situation %></p>
+                <% } %>
+            </div>
+            <div class="toolBor">
+                <% if (tool.currently_held_by) { %>
+                    <div class="borInfo">
+                        <p class="borHead">Borrowed to: </p>
+                        <span class="borUser"><%= tool.currently_held_by %></span>
+                    </div>
+                    <div class="borDate">
+                        <p>(since <%= new Date(tool.borrowed_at).toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric' }) %>)</p>
+                    </div>
+                <% } else { %>
+                    <div class="borInfo">
+                        <p class="borStatus">Status: </p>
+                        <span>Available for checkout</span>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <div class="detailsBtn">
+        <div class="inventBtn">
+            <a href="/inventory">
+                <button>Inventory</button>
+            </a>
+        </div>
+        <div class="conditionBtn">
+            <% if (tool.currently_held_by) { %>
+                <a href="/transactions">
+                    <button>See Transactions</button>
+                </a>
+            <% } else { %>
+                <a href="/borrow">
+                    <button>Borrow it!</button>
+                </a>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>

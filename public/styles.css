@@ -1,0 +1,794 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* background: #EEEEEE; */
+    background: #F2F2F2;
+}
+
+/* Index Page */
+.mainPage {
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: auto;
+
+    position: relative;
+}
+
+.mainImg img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.mainText {
+    position: absolute;
+    top: 30%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    font-family: 'Roboto', sans-serif;
+}
+
+.mainText h1 {
+    color: #F2F2F2;
+    font-size: 4em;
+    text-align: center;
+    margin: 10px;
+}
+
+.mainText p {
+    color: #D3D3D3;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.mainBtn {
+    position: absolute;
+    top: 48%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+}
+
+.mainBtn a {
+    text-decoration: none;
+}
+
+.startBtn {
+    background: #2E8B57;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    padding: 0.35em;
+    padding-left: 1.2em;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 0.9em;
+    border: none;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 0 1.6em -0.6em #2E8B57;
+    overflow: hidden;
+    position: relative;
+    height: 2.8em;
+    padding-right: 3.3em;
+    cursor: pointer;
+}
+
+.startBtn .icon {
+    background: white;
+    margin-left: 1em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2em;
+    width: 2.2em;
+    border-radius: 0.7em;
+    box-shadow: 0.1em 0.1em 0.6em 0.2em #2E8B57;
+    right: 0.3em;
+    transition: all 0.3s;
+}
+
+.startBtn:hover .icon {
+    width: calc(100% - 0.6em);
+}
+
+.startBtn .icon svg {
+    width: 1.1em;
+    transition: transform 0.3s;
+    color: #2E8B57;
+}
+
+.startBtn:hover .icon svg {
+    transform: translateX(0.1em);
+}
+
+.startBtn:active .icon {
+    transform: scale(0.95);
+}
+
+/* Header and NavBar */
+.myHead {
+    display: flex;
+    align-items: center;
+    background: #D3D3D3;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.headIcons {
+    display: flex;
+    align-items: center;
+}
+
+.headImg {
+    margin: 0px 5px 0px 20px;
+}
+
+.headImg img {
+    width: 60px;
+}
+
+.headText h1 {
+    font-family: 'Pacifico', sans-serif;
+    font-weight: 300;
+    font-size: 3em;
+    color: #2AAA8A;
+}
+
+.navMenu {
+    display: flex;
+    justify-content: center;
+    margin: 0px auto;
+}
+
+.navItems {
+    display: flex;
+    list-style: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    color: #36454F;
+}
+
+.navItems li {
+    margin: 0px 15px;
+}
+
+.el a {
+    text-decoration: none;
+    position: relative;
+}
+
+.el a::before {
+    content: '';
+    position: absolute;
+    bottom: -3px; 
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: black;
+    border-radius: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.el a:hover::before {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.el a, a:visited, a:hover, a:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+.active {
+    color: #009E60;
+    font-weight: 600;
+}
+
+/* Inventory styles */
+.boxTools {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    list-style: none;
+    max-width: 1000px;
+    gap: 10px;
+    margin: 15px auto;
+    place-items: center;
+}
+
+.infoTools {
+    border-radius: 5px;
+    width: 250px;
+    height: 230px;
+    padding: 10px;
+    background-color: #fff;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+.infoTools img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
+    border-radius: 8px;
+}
+
+.toolTitle {
+    font-size: 0.9em;
+    text-align: center;
+    font-weight: 500;
+    margin: 5px 0px 5px 0px;
+}
+
+.situation, .condition {
+    padding: 5px 10px;
+    border-radius: 7px;
+    max-width: 75px;
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.conditionInfo, .situationInfo, .borrowInfo {
+    display: flex;
+    align-items: center;
+    margin: 5px 0px;
+    font-size: 0.8em;
+}
+
+.sitTitle, .condTitle, .bowTitle {
+    width: 75px;
+}
+
+.conditionInfo p, .situationInfo p, .bowTitle {
+    font-weight: 600;
+}
+
+.situation.avai {
+    background-color: #50c878cc;
+}
+
+.situation.use {
+    background-color: #F39C12;
+}
+
+.condition.good {
+    background-color: #0092afde;
+}
+
+.condition.fair {
+    background-color: #F1C40F;
+}
+
+.condition.poor {
+    background-color: #E3735E;
+}
+
+.openBtn {
+    display: flex;
+    justify-content: end;
+}
+
+.openBtn button {
+    color: #2E8B57;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 8px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8em;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.openBtn button:hover {
+    background-color: #2E8B57;
+    color: #fff;
+    box-shadow: 0 0 0 3px #3ca569;
+}
+
+/* Users Styles */
+.userHead, .borrowHead {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.userBoard, .borrowBoard {
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    border: 0.5px solid #D3D3D3;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.userForm {
+    margin: 10px 0px;
+}
+
+.userForm input {
+    padding: 5px;
+    border: 0.5px solid #D3D3D3;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.userForm button {
+    padding: 5px 15px;
+    font-size: 0.8em;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    background-color: #2E8B57;
+    color: #fff;
+}
+
+.userForm button:hover {
+    cursor: pointer;
+    background-color: #009E60;
+}
+
+.userList {
+    list-style: none;
+}
+
+.userInfo {
+    display: flex;
+    margin: 10px 0px;
+    padding: 5px;
+    width: 250px;
+    border-radius: 5px;
+    background-color: #FAF9F6;
+    border: 0.5px solid #D3D3D3;
+}
+
+/* Element positioned to the right */
+.btn {
+    margin-left: auto;
+}
+
+.btn button {
+    padding: 5px 8px;
+    font-size: 0.7em;
+    font-weight: 600;
+    background-color: #EE4B2B;
+    color: #F2F2F2;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn button:hover {
+    cursor: pointer;
+    background-color: #D22B2B;
+}
+
+#deleteModal {
+    display:none; 
+    position:fixed; 
+    top:0; 
+    left:0; 
+    width:100%; 
+    height:100%; 
+    background:rgba(0,0,0,0.5); 
+    z-index:1000;
+}
+
+.modalBox {
+    background:white; 
+    width:300px; 
+    margin:100px auto; 
+    padding:20px; 
+    border-radius:8px; 
+    text-align:center;
+}
+
+.modalBox p {
+    font-size: 0.8em;
+    margin: 8px 0px;
+}
+
+.formModal input {
+    width: 80%;
+    padding: 10px; 
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.formModal .delBtn {
+    background:#EE4B2B; 
+    color:white; 
+    border: none; 
+    padding: 10px 20px; 
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.formModal .cancelBtn {
+    background:grey; 
+    color:white;
+    border: none; 
+    padding: 10px 20px; 
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+/* Borrow Styles */
+.borrowForm {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px;
+}
+
+.userOption, .toolOption {
+    margin: 5px 0px;
+}
+
+.userOption label {
+    margin-right: 10px;
+}
+
+.toolOption label {
+    margin-right: 4px;
+}
+
+.borrowBtn {
+    margin: 10px auto;
+}
+
+.borrowBtn button {
+    font-size: 0.9em;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #2E8B57;
+    color: #fff;
+}
+
+.borrowBtn button:hover {
+    cursor: pointer;
+    background-color: #009E60;
+}
+
+/* Transactions Style */
+.usersTable {
+    border: 1px solid #D3D3D3;
+    border-radius: 8px;
+    overflow: hidden;
+    width: fit-content;
+
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    margin: 10px auto;
+}
+
+table {
+    border-collapse: collapse;  
+}
+
+thead {
+    background-color: #D3D3D3;
+}
+
+.nameRow, .toolRow {
+    text-align: left;
+    width: 175px;
+    padding: 8px 10px;
+    font-weight: 400;
+    color: #36454F;
+    font-size: 0.9em;
+}
+
+.borrowRow, .returnRow {
+    text-align: left;
+    width: 150px;
+    padding: 8px 10px;
+    font-weight: 400;
+    color: #36454F;
+    font-size: 0.9em;
+}
+
+.buttonRow {
+    text-align: left;
+    width: 60px;
+    padding: 12px 10px;
+}
+
+tbody {
+    border: 0.5px solid #D3D3D3;
+}
+
+tbody tr td {
+    font-size: 0.8em;
+    padding: 8px 12px;
+}
+
+.returnBtn {
+    border: none;
+}
+
+/* Footer */
+.footPage {
+    position: fixed;
+    /* color: #fff; */
+    width: 100%;
+    background: #D3D3D3;
+    bottom: 0;
+    margin: 5px auto 0px auto;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8em;
+}
+
+footer a {
+    font-weight: 500;
+    text-decoration: none;
+}
+
+/* Details page */
+.mainDetails {
+    background-color: #fff;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px auto;
+    border-radius: 8px;
+}
+
+.toolImg img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    border-radius: 8px;
+}
+
+.toolInfo {
+    font-family: 'Roboto', sans-serif;
+}
+
+.toolInfo h1 {
+    text-align: center;
+    margin: 10px 0px;
+}
+
+.toolCond, .toolSit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0px;
+    font-size: 0.9em;
+}
+
+.condHead, .sitHead, .borHead {
+    width: 100px;
+    font-weight: 600;
+}
+
+.toolBor {
+    margin: 5px 0px;
+    font-size: 0.9em;
+}
+
+.borInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+}
+
+.borUser {
+    padding: 5px 10px;
+    border-radius: 7px;
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: 600;
+    background-color: #50c878cc;
+}
+
+.borDate {
+    display: flex;
+    justify-content: center;
+    margin: 5px auto;
+    font-size: 0.8em;
+}
+
+.borStatus {
+    width: 60px;
+    font-weight: 600;
+}
+
+.situation, .condition {
+    padding: 5px 10px;
+    border-radius: 7px;
+    max-width: 75px;
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.detailsBtn {
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+    gap: 15px;
+}
+
+.inventBtn button {
+    font-size: 0.9em;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #2E8B57;
+    color: #fff;
+}
+
+.inventBtn button:hover {
+    cursor: pointer;
+    background-color: #009E60;
+}
+
+.conditionBtn button {
+    font-size: 0.9em;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #36454F;
+    color: #fff;
+}
+
+.conditionBtn button:hover {
+    cursor: pointer;
+    background-color: #36454fd0
+}
+
+@media screen and (max-width: 1200px) {
+    .mainPage {
+        margin: auto 10px;
+    }
+
+    .mainText {
+        top: 30%;
+        left: 60%;
+    }
+
+    .mainText h1 {
+        font-size: 3em;
+    }
+
+    .mainText p {
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    
+    /* Index */
+    .mainText {
+        top: 35%;
+        left: 60%;
+    }
+
+    .mainText h1 {
+        font-size: 2.5em;
+    }
+
+    .mainText p {
+        font-size: 0.7em;
+    }
+
+    .startBtn {
+        font-size: 0.7em;
+    }
+
+    /* Header and NavBar */
+    .myHead {
+        flex-direction: column;
+    }
+
+    .navMenu {
+        margin: 0px 5px;
+    }
+
+    .navItems {
+        font-size: 0.9em;
+        margin-bottom: 8px;
+    }
+
+    /* Inventory */
+    .boxTools {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    /* Transactions */
+    .usersTable {
+        justify-self: center;
+        margin: 10px;
+    }
+
+    .nameRow, .toolRow {
+        width: 150px;
+        font-size: 0.7em;
+    }
+
+    .borrowRow, .returnRow {
+        width: 130px;
+        font-size: 0.7em;
+    }
+
+    .buttoRow {
+        width: 70px;
+    }
+
+    tbody tr td {
+        font-size: 0.6em;
+        padding: 8px 12px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    
+    /* Index */
+    .mainText {
+        top: 40%;
+        left: 60%;
+    }
+
+    .mainText h1 {
+        font-size: 1.5em;
+    }
+
+    .mainText p {
+        font-size: 0.5em;
+    }
+
+    .mainBtn {
+        top: 50%;
+    }
+
+    .startBtn {
+        font-size: 0.5em;
+    }
+
+    .mainDetails {
+        background-color: #fff;
+        max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 20px;
+        border-radius: 8px;
+    }
+}

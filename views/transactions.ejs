@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+    <%- include('navbar') %>
+    <div class="borrowHead">
+        <h1>All <%= title %></h1>
+    </div>
+    <div class="usersTable">
+        <table>
+            <thead>
+                <tr>
+                    <th class="nameRow">User</th>
+                    <th class="toolRow">Tool</th>
+                    <th class="borrowRow">Borrowed</th>
+                    <th class="returnRow">Returned</th>
+                    <th class="buttonRow"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% orders.forEach((order) => { %>
+                    <tr class="tableInfo">
+                        <td><%= order.tooluser_name %></td>
+                        <td><%= order.tool %></td>
+                        <td><%= order.borrowed_at.toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric' }) %></td>
+                        <% if (order.returned_at != undefined) { %>
+                            <td><%= order.returned_at.toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric' }) %></td>
+                        <% } else { %>
+                            <td><%= order.returned_at %></td>
+                        <% } %>
+                        <td>
+                            <form action="/<%= order.invent_id %>/return" method="POST">
+                                <button title="Return Tool" class="returnBtn" type="submit" onclick="return confirm('Are you returning this tool?');">
+                                    <img src="/icons/return.svg" alt="">
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+    <div class="footPage">
+        <%- include('footer') %>
+    </div>
+</body>
+</html>

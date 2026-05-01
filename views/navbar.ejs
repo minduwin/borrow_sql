@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="myHead">
+        <div class="headIcons">
+            <div class="headImg">
+                <img src="/icons/tool.svg" alt="tool">
+            </div>
+            <div class="headText">
+                <h1>Shared</h1>
+            </div>
+        </div>
+        <nav class="navMenu">
+            <ul class="navItems">
+                <li class="el">
+                    <a href="/">Home</a>
+                </li>
+                <li class="el">
+                    <a href="/inventory">Inventory</a>
+                </li>
+                <li class="el">
+                    <a href="/users">Users</a>
+                </li>
+                <li class="el">
+                    <a href="/borrow">Borrow</a>
+                </li>
+                <li class="el">
+                    <a href="/transactions">Transactions</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <script>
+        // Set a different color to the link selected
+        window.addEventListener('DOMContentLoaded', () => {
+            // Get current path
+            const currentPath = window.location.pathname;
+
+            // Get all links in NAV
+            const navLinks = document.querySelectorAll('.navItems .el a');
+
+            navLinks.forEach(link => {
+                // Get the href attribute from the link
+                const linkPath = link.getAttribute('href');
+
+                // Check if the link's path matches the current URL path
+                if (currentPath === linkPath) {
+                    link.parentElement.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

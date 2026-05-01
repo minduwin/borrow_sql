@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title><%= title %></title>
+</head>
+<body>
+    <%- include('navbar') %>
+    <div class="mainBoard">
+        <div>
+            <ul class="boxTools">
+                <% tools.forEach((item, index) => { %>
+                    <li class="infoTools">
+                        <img src="<%= item.image_path %>" alt="Product image" width="150">
+                        <p class="toolTitle"><%= item.tool %></p>
+                        <div class="secondInfo">
+                            <div class="conditionInfo">
+                                <p class="condTitle">Condition: </p>
+                                <% if (item.condition === 'Good') { %>
+                                    <p class="condition good"><%= item.condition %></p>
+                                <% } else if (item.condition === 'Fair') { %>
+                                    <p class="condition fair"><%= item.condition %></p>
+                                <% } else { %>
+                                    <p class="condition poor"><%= item.condition %></p>
+                                <% } %>
+                            </div>
+                            <div class="situationInfo">
+                                <p class="sitTitle">Situation: </p>
+                                <% if (item.situation === 'Available') { %>
+                                    <p class="situation avai"><%= item.situation %></p>
+                                <% } else { %>
+                                    <p class="situation use"><%= item.situation %></p>
+                                <% } %>
+                            </div>
+                            <div class="openBtn">
+                                <a href="/details/<%= item.invent_id %>">
+                                    <button class="openImg">
+                                        Details
+                                    </button>
+                                </a>
+                            </div>
+                        </div>    
+                    </li>
+                <% }) %>
+            </ul>
+        </div>
+    </div>
+    <div class="footPage">
+        <%- include('footer') %>
+    </div>
+</body>
+</html>
