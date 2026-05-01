@@ -1,3 +1,3 @@
-<center> # Inventory Application </center>
+# <center>Inventory Application</center>
 
 #### Inventory application using Node JS, Express and PostgreSQL
