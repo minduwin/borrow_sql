@@ -4,6 +4,8 @@
 
 <h5 align="center">https://inventorysql.onrender.com/</h5>
 
+![image alt](https://github.com/minduwin/borrow_sql/blob/a43ee96e912bd8181d7218383f7352086378adb7/1st-page.jpg)
+
 <p>
 At the conclusion of the Express module—part of The Odin Project's NodeJS course—we were tasked with developing an application that would integrate the various technologies learned thus far: NodeJS and its Express framework, the use of a database such as PostgreSQL, and the deployment of both the database and the application to an external server.
 Consequently, I chose to develop a tool-sharing application—something that could be utilized within a small community or residential complex.
